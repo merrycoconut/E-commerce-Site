@@ -1,0 +1,55 @@
+.product-card {
+    border: 0;    
+    border-radius: 12px;
+    padding: 1.5rem;    
+    background: white;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:focus-visible {
+    outline: 1.5px solid #296cfe;
+}
+
+img {
+    object-fit: cover;
+}
+
+.price {
+    font-weight: 500;
+    color: #525252;
+}
+
+.sale {
+    text-decoration: line-through;
+}
+
+.color {     
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid #747474;
+    border-radius: 50%;    
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.color:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);    
+}
+
+.color:focus-visible {
+    /* TBD Can't be focused */
+    outline: 1.5px solid #296cfe;
+}
+
+.color-swatch {
+    display: flex;
+    gap: 4px;
+}
+
+
+

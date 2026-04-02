@@ -10,7 +10,7 @@ export default function ProductCard({ imgUrl, colors, productName, priceRange })
     
     const onSale = priceRange.highest > priceRange.lowest;
 
-    return <div>        
+    return <button className="product-card">        
         <img
             src={imgUrl}
             height = "300"
@@ -21,5 +21,5 @@ export default function ProductCard({ imgUrl, colors, productName, priceRange })
             {onSale? <><span className="sale">{priceRange.highest}</span> {priceRange.lowest}</>: priceRange.highest}
         </p>
         <div className='color-swatch'>{displayColors}</div>                
-    </div>
+    </button>
 }

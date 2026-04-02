@@ -25,5 +25,5 @@ export default function ProductList() {
         pullJson()                       
     }, []);
 
-    return <>{products}</>
+    return <div className="product-list">{products}</div>
 }
