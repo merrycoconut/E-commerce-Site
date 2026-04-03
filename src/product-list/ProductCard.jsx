@@ -5,7 +5,8 @@ export default function ProductCard({ imgUrl, colors, productName, priceRange })
         return <div 
             key={index}
             className="color"
-            style={{backgroundColor: color}}></div>
+            style={{backgroundColor: color}}
+            ></div>
     });
     
     const onSale = priceRange.highest > priceRange.lowest;
