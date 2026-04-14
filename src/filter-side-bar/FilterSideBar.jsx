@@ -14,7 +14,7 @@ function FilterSection({sectionName, options}) {
                 <p> {isClick?"-":"+"} </p>            
             </div>
             <div className="filter-items" hidden={isClick}>
-                <FilterItems options={options} />
+                <FilterItems sectionName={sectionName} options={options} />
             </div>
             
             <hr />
@@ -22,16 +22,12 @@ function FilterSection({sectionName, options}) {
     )
 }
 
-export default function FilterSideBar() {
+export default function FilterSideBar({setFilter}) {
     const filterSection = productFilters.map(filter =>  <FilterSection key={filter.sectionName} sectionName={filter.sectionName} options={filter.options} />);
     
     function applyFilter(formData) {
-        // Get the option
-        const selectedOptions = Array.from(formData.keys());
-        // Get the filter section
-        console.log(selectedOptions);
-        
-
+        const selectedOptions = Array.from(formData.entries());        
+        setFilter([true, selectedOptions]);
     }
 
     return (
