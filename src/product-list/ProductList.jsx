@@ -1,12 +1,19 @@
 import ProductCard from "./ProductCard";
 import { useState, useEffect } from "react";
 
-export default function ProductList() {
-    const [products, setProducts] = useState();
+export default function ProductList({isFilter}) {
+    const [products, setProducts] = useState();    
     
     async function pullJson() {
-        const productUrl = "https://www.greatfrontend.com/api/projects/challenges/e-commerce/products";
-        let response = await fetch (productUrl);
+        let productUrl = new URL("https://www.greatfrontend.com/api/projects/challenges/e-commerce/products");
+
+        // if there is no filter applyed, do nothing              
+        if (isFilter[0]) { 
+            // To Do: Pass dynamic parameters to the method 
+            productUrl.searchParams.append('color', 'black');
+        }        
+        
+        let response = await fetch (productUrl);          
         let result = await response.json();           
         let resultData = Array.from(result.data);            
         let productCards = resultData.map(r => {            
@@ -21,9 +28,9 @@ export default function ProductList() {
         setProducts(productCards);                                         
     }
 
-    useEffect(() => {
+    useEffect(() => {        
         pullJson()                       
-    }, []);
+    }, [isFilter]);
 
     return <div className="product-list">{products}</div>
 }
