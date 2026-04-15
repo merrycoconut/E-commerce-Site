@@ -10,4 +10,33 @@
 
 .filter-option {
     display: block;
+    padding: 2px;
+}
+
+.filter-option:hover {
+    color: #80868b;
+}
+
+.filter-option:focus-visible {
+    /* TBD Can't be focused */
+    outline: 1.5px solid #296cfe;
+}
+
+.filter-button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.filter-button-container > button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5%;
+}
+
+.filter-button-container > button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 2px 5px #80868b76;
 }

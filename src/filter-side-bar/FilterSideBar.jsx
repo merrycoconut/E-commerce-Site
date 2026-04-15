@@ -33,8 +33,11 @@ export default function FilterSideBar({setFilter}) {
     return (
         <form action={applyFilter}>
             {filterSection}
-            <button type="submit">Apply</button>
-            <button>Clear All</button>
+            <div className='filter-button-container'>
+                <button type="submit">Apply</button>
+                <button onClick={() => setFilter([false, {}])}>Clear All</button>
+            </div>
+            
         </form>
     )
 }
