@@ -51,5 +51,6 @@ img {
     gap: 4px;
 }
 
-
-
+.product-card > p {
+    text-align: left;
+}

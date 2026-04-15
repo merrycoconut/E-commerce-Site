@@ -1,17 +1,21 @@
+import DropDownMenu from "./DropDownMenu";
 import ProductCard from "./ProductCard";
 import { useState, useEffect } from "react";
 
 export default function ProductList({isFilter}) {
-    const [products, setProducts] = useState();    
-    
+    const [products, setProducts] = useState();   
+
     async function pullJson() {
         let productUrl = new URL("https://www.greatfrontend.com/api/projects/challenges/e-commerce/products");
 
-        // if there is no filter applyed, do nothing              
+        // isFilter[0] == true -> Apply filter           
         if (isFilter[0]) { 
-            // To Do: Pass dynamic parameters to the method 
-            productUrl.searchParams.append('color', 'black');
-        }        
+            const parameters = isFilter[1];
+            parameters.forEach(parameter => {
+                const [key, value] = parameter;        
+                productUrl.searchParams.append(key.toLowerCase(), value);
+            })
+        } 
         
         let response = await fetch (productUrl);          
         let result = await response.json();           
@@ -25,12 +29,19 @@ export default function ProductList({isFilter}) {
                 priceRange={r.priceRange}
             />
         });
-        setProducts(productCards);                                         
+        setProducts(productCards);
     }
 
-    useEffect(() => {        
-        pullJson()                       
+    useEffect(() => {
+        pullJson();              
     }, [isFilter]);
 
-    return <div className="product-list">{products}</div>
+    return(
+        <div >
+            <DropDownMenu />
+            <div className="product-list">
+                {products}
+            </div>
+        </div>
+    )
 }
