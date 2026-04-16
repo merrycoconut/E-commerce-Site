@@ -1,12 +1,20 @@
 import './DropDownMenu.css'
 
-export default function DropDownMenu (){
+export default function DropDownMenu ({ setSort }) {
+    function handleChange(event) {
+        const userSelect = event.target.value; 
+        setSort(userSelect);        
+    }
+
     return (
         <div className="drop-down-container">
-            <label for='sortBy'>sortBy</label>
-            <select id='sortBy'>
-                <option value="sort by">sort by </option>
-                <option value="sort by">sort by</option>
+            <select id='sortBy' onChange={handleChange}>
+                <option value="">Sort by </option>
+                <option value="popularity">Most popular</option>
+                <option value="rating">Best rating</option>
+                <option value="created">Newest</option>
+                <option value="price-asc">Price: Low to high</option>
+                <option value="price-desc">Price: High to low</option>
             </select>
         </div>
     )
