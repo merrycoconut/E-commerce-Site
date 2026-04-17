@@ -1,6 +1,6 @@
 import './Body.css';
-import ProductList from "./product-list/ProductList";
-import FilterSideBar from "./filter-side-bar/FilterSideBar";
+import ProductList from "./components/product-list/ProductList.jsx";
+import FilterSideBar from "./components/filter-side-bar/FilterSideBar.jsx";
 import { useState } from 'react';
 
 export default function Body() {

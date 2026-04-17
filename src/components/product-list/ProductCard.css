@@ -28,12 +28,26 @@ img {
     text-decoration: line-through;
 }
 
-.color {     
-    height: 1rem;
+.color-swatch {
+    display: flex;
+    gap: 4px;
+}
+
+.product-card > p {
+    text-align: left;
+}
+
+input[type="radio"] {
+    appearance: none;
+    border-radius: 50%;
     width: 1rem;
+    height: 1rem;
     border: 1px solid #747474;
-    border-radius: 50%;    
     transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+input[type="radio"]:checked {
+  outline: 3px double #80868b;
 }
 
 .color:hover {
@@ -44,13 +58,4 @@ img {
 .color:focus-visible {
     /* TBD Can't be focused */
     outline: 1.5px solid #296cfe;
-}
-
-.color-swatch {
-    display: flex;
-    gap: 4px;
-}
-
-.product-card > p {
-    text-align: left;
 }
