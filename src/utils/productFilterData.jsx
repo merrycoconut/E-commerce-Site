@@ -32,11 +32,11 @@ export  const productFilters = [
     {
         sectionName: "Rating",
         options: [
-            { label: "5 stars & up", value: 5 },
-            { label: "4 stars & up", value: 4 },
-            { label: "3 stars & up", value: 3 },
-            { label: "2 stars & up", value: 2 },
-            { label: "1 star & up", value: 1 },
+            { label: "★★★★★", value: 5 },
+            { label: "★★★★☆", value: 4 },
+            { label: "★★★☆☆", value: 3 },
+            { label: "★★☆☆☆", value: 2 },
+            { label: "★☆☆☆☆", value: 1 },
         ],
     }        
 ];

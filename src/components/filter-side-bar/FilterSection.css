@@ -1,0 +1,19 @@
+.filter-section {
+    padding: 2rem;
+}
+
+.filter-head {
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+}
+
+.color-filter-items {
+    display: flex;
+    gap: 4px;
+}
+
+.filter-items {
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #dddddd ;
+}

@@ -2,11 +2,11 @@ import './ProductCard.css'
 
 export default function ProductCard({ imgUrl, colors, productName, priceRange }) {
     const displayColors = colors.map((color, index) => {
-        return <div 
+        return <input type="radio" 
             key={index}
             className="color"
             style={{backgroundColor: color}}
-            ></div>
+            />
     });
     
     const onSale = priceRange.highest > priceRange.lowest;
