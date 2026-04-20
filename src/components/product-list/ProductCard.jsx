@@ -1,9 +1,9 @@
-import './ProductCard.css'
+import './ProductCard.css';
 
 export default function ProductCard({ imgUrl, colors, productName, priceRange }) {
-    const displayColors = colors.map((color, index) => {
+    const displayColors = colors.map(color => {
         return <input type="radio" 
-            key={index}
+            key={color}
             className="color"
             style={{backgroundColor: color}}
             />

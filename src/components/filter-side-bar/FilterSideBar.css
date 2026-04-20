@@ -1,10 +1,12 @@
 .filter-button-container {
+
     display: flex;
     justify-content: space-between;
     padding: 2rem;
 }
 
 .filter-button-container > button {
+    color: #525252;
     font-size: 0.9rem;
     padding: 10px;
     background-color: white;

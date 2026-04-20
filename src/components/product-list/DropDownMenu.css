@@ -10,6 +10,7 @@ select,
 }
 
 select {
+    color: #525252;
     border: 2px solid #eeeeee;;
     padding: 10px;
     transition: 0.4s;
@@ -37,6 +38,7 @@ select:open::picker-icon {
 }
 
 option {
+    color: #737373;
     display: flex;
     justify-content: flex-start;
     gap: 20px;

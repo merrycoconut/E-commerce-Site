@@ -1,6 +1,7 @@
 .filter-option {
     display: block;
-    padding: 2px;
+    color: #737373;
+    padding: 8px;
 }
 
 .filter-option:hover {
