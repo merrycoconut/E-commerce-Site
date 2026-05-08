@@ -1,35 +1,37 @@
 .filter-option {
-    display: block;
-    color: #737373;
-    padding: 8px;
+  display: block;
+  color: #737373;
+  padding: 8px;
 }
 
 .filter-option:hover {
-    color: #80868b;
+  color: #80868b;
 }
 
 .filter-option:focus-visible {
-    /* TBD Can't be focused */
-    outline: 1.5px solid #296cfe;
+  /* TODO: make it focusable */
+  outline: 1.5px solid #296cfe;
 }
 
 .color-option:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);    
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .color-option:focus-visible {
-    /* TBD Can't be focused */
-    outline: 1.5px solid #296cfe;
+  /* TODO: make it focusable */
+  outline: 1.5px solid #296cfe;
 }
 
 .color-option > input[type="radio"] {
-    appearance: none;
-    border-radius: 50%;
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid #747474;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  appearance: none;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #747474;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .color-option > input[type="radio"]:checked {

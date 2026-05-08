@@ -1,24 +1,28 @@
-export function getApiUrl (isFilter, isSort) {
-    let productUrl = new URL("https://www.greatfrontend.com/api/projects/challenges/e-commerce/products");
+export function getApiUrl(filters, sortPars) {
+  let productUrl = new URL(
+    "https://www.greatfrontend.com/api/projects/challenges/e-commerce/products",
+  );
 
-    // isFilter[0] == true -> Apply filter           
-    if (isFilter[0]) { 
-        const filterPars = isFilter[1];
-        filterPars.forEach(filterPar => {
-            const [key, value] = filterPar;        
-            productUrl.searchParams.append(key.toLowerCase(), value);
-        })
-    } 
-    
-    // isSort -> Apply Sort
-    if (isSort) {
-        if (isSort.slice(0,5) === "price") {
-            productUrl.searchParams.append("sort", "price");  
-            productUrl.searchParams.append("direction", isSort.slice(6));                
-        } else {
-            productUrl.searchParams.append("sort", isSort);    
-        }      
+  // Apply filter
+  if (filters && filters.length) {
+    filters.forEach((filter) => {
+      const [key, value] = filter;
+      productUrl.searchParams.append(key.toLowerCase(), value);
+    });
+  }
+
+  // Apply Sort
+  if (sortPars) {
+    if (sortPars === "price-asc") {
+      productUrl.searchParams.append("sort", "price");
+      productUrl.searchParams.append("direction", "asc");
+    } else if (sortPars === "price-desc") {
+      productUrl.searchParams.append("sort", "price");
+      productUrl.searchParams.append("direction", "desc");
+    } else {
+      productUrl.searchParams.append("sort", sortPars);
     }
+  }
 
-    return productUrl;
+  return productUrl;
 }
