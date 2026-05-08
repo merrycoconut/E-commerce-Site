@@ -1,49 +1,49 @@
 .drop-down-container {
-    padding: 2rem;
-    display: flex;
-    justify-content: end;
+  padding: 2rem;
+  display: flex;
+  justify-content: end;
 }
 
-select, 
+select,
 ::picker(select) {
-    appearance: base-select;
+  appearance: base-select;
 }
 
 select {
-    color: #525252;
-    border: 2px solid #eeeeee;;
-    padding: 10px;
-    transition: 0.4s;
-    transform: translateY(-1px);
-    box-shadow: 0px 1px 3px #eeeeee;
+  color: #525252;
+  border: 2px solid #eeeeee;
+  padding: 10px;
+  transition: 0.4s;
+  transform: translateY(-1px);
+  box-shadow: 0px 1px 3px #eeeeee;
 }
 
 select:hover,
 select:focus {
-    background: #eeeeee;
-    box-shadow: 0px 1px 5px #eeeeee;    
+  background: #eeeeee;
+  box-shadow: 0px 1px 5px #eeeeee;
 }
 
 select::picker-icon {
-    color: #999999;
-    transition: 0.4s rotate;
+  color: #999999;
+  transition: 0.4s rotate;
 }
 
 select:open::picker-icon {
-    rotate: 180deg;
+  rotate: 180deg;
 }
 
 ::picker(select) {
-    border: 2px solid #eeeeee;
+  border: 2px solid #eeeeee;
 }
 
 option {
-    color: #737373;
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 10px;
-    transition: 0.4s;
+  color: #737373;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 10px;
+  transition: 0.4s;
 }
 
 ::picker(select) {

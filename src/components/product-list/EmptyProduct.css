@@ -1,0 +1,27 @@
+.empty-product {
+  text-align: center;
+}
+.empty-product-icon {
+  color: #4338ca;
+}
+
+.empty-product-title {
+  font-size: 20px;
+}
+
+.empty-product button {
+  background-color: #4338ca;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.7rem 1.5rem;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.empty-product button:focus,
+.empty-product button:hover {
+  background-color: #f9fafb;
+  color: #4338ca;
+  border: 1px solid #4338ca;
+}
