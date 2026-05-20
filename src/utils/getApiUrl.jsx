@@ -18,7 +18,7 @@ export function getApiUrl(filters, sortPars) {
   } else if (sortPars === "price-desc") {
     productUrl.searchParams.append("sort", "price");
     productUrl.searchParams.append("direction", "desc");
-  } else {
+  } else if (sortPars) {
     productUrl.searchParams.append("sort", sortPars);
   }
 
