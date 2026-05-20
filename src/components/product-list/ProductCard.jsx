@@ -6,17 +6,6 @@ export default function ProductCard({
   productName,
   priceRange,
 }) {
-  const displayColors = colors.map((color) => {
-    return (
-      <input
-        type="radio"
-        key={color}
-        className="color"
-        style={{ backgroundColor: color }}
-      />
-    );
-  });
-
   const onSale = priceRange.highest > priceRange.lowest;
 
   return (
@@ -35,7 +24,18 @@ export default function ProductCard({
           priceRange.highest
         )}
       </p>
-      <div className="color-swatch">{displayColors}</div>
+      <div className="color-swatch">
+        {colors.map((color) => {
+          return (
+            <input
+              type="radio"
+              key={color}
+              className="color"
+              style={{ backgroundColor: color }}
+            />
+          );
+        })}
+      </div>
     </button>
   );
 }
