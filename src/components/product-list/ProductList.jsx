@@ -57,7 +57,7 @@ export default function ProductList({ filters, clearFilter }) {
   return (
     <div>
       <DropDownMenu
-        handleDropDownChange={(userSelection) => setSortPars(userSelection)}
+        onDropDownChange={(userSelection) => setSortPars(userSelection)}
       />
       <div className="product-list">
         {!fetchStatus ? (

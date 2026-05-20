@@ -1,13 +1,10 @@
 import "./DropDownMenu.css";
 
-export default function DropDownMenu({ handleDropDownChange }) {
+export default function DropDownMenu({ onDropDownChange }) {
   return (
     <div className="drop-down-container">
-      <select
-        id="sortBy"
-        onChange={(e) => handleDropDownChange(e.target.value)}
-      >
-        <option value="">Sort by </option>
+      <select id="sortBy" onChange={(e) => onDropDownChange(e.target.value)}>
+        <option value=""> Sort by </option>
         <option value="popularity">Most popular</option>
         <option value="rating">Best rating</option>
         <option value="created">Newest</option>

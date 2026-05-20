@@ -12,16 +12,14 @@ export function getApiUrl(filters, sortPars) {
   }
 
   // Apply Sort
-  if (sortPars) {
-    if (sortPars === "price-asc") {
-      productUrl.searchParams.append("sort", "price");
-      productUrl.searchParams.append("direction", "asc");
-    } else if (sortPars === "price-desc") {
-      productUrl.searchParams.append("sort", "price");
-      productUrl.searchParams.append("direction", "desc");
-    } else {
-      productUrl.searchParams.append("sort", sortPars);
-    }
+  if (sortPars === "price-asc") {
+    productUrl.searchParams.append("sort", "price");
+    productUrl.searchParams.append("direction", "asc");
+  } else if (sortPars === "price-desc") {
+    productUrl.searchParams.append("sort", "price");
+    productUrl.searchParams.append("direction", "desc");
+  } else {
+    productUrl.searchParams.append("sort", sortPars);
   }
 
   return productUrl;
