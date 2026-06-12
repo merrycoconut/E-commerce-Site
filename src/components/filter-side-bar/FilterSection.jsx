@@ -3,18 +3,23 @@ import FilterItems from "./FilterItems";
 import { useState } from "react";
 
 export default function FilterSection({ sectionName, options }) {
-  const [isMinus, setIsClick] = useState(false);
+  const [isMinus, setIsMinus] = useState(false);
   const isColor = sectionName === "Color" ? true : false;
 
   return (
     <div className="filter-section">
-      <div className="filter-head" onClick={() => setIsClick(!isMinus)}>
+      <div className="filter-head" onClick={() => setIsMinus(!isMinus)}>
         <p> {sectionName} </p>
         <p> {isMinus ? "-" : "+"} </p>
       </div>
       <div
-        className={isColor ? "color-filter-items filter-items" : "filter-items"}
-        hidden={isMinus}
+        className={
+          isMinus
+            ? "hide-items"
+            : isColor
+              ? "color-filter-items filter-items"
+              : "filter-items"
+        }
       >
         <FilterItems
           sectionName={sectionName}

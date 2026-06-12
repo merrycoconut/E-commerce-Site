@@ -1,18 +1,51 @@
 <!-- Use Ctrl/Cmd + Shift + V in VS Code to preview this Markdown file. -->
 
-# E-commerce site
+# E-commerce Site
 
 ## Overview
 
-## What this site support
-- Product card state 
-    - normal
-    - hover
-    - focus
-        - TBD: Currently using `<button>` instead of `<div>` to support focus, am I need to change the tag
-- Color swatch state
-    - normal
-    - hover
-    - focus
-        - TBD: can't focus to color swatch
-    - out-of stock
+A React-based e-commerce web application that displays featured products in a responsive grid layout. Users can browse products through product cards, sort listings using multiple criteria, and narrow results with various filtering options.
+
+## Features
+
+- Display products in a grid layout
+- Sort products by:
+  - Popularity
+  - Rating
+  - Creation date
+  - Price
+- Filter products by:
+  - Collection
+  - Category
+  - Color
+  - Rating
+
+## Installation
+
+Install the required dependencies using npm:
+
+```bash
+npm install
+```
+
+## Usage
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Technologies Used
+
+- HTML5
+- CSS
+- JavaScript
+- React
+
+## Future Improvements
+
+- Add responsive design for mobile and tablet devices
+- Implement backend integration and API support
+- Rewrite the project using TypeScript
+- Improve performance and code organization

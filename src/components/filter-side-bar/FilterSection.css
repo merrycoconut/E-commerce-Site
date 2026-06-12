@@ -18,3 +18,13 @@
   padding-bottom: 2rem;
   border-bottom: 1px solid #e5e5e5;
 }
+
+.hide-items {
+  /* A screen reader friendly style */
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
