@@ -1,5 +1,5 @@
 import "./FilterSection.css";
-import FilterItems from "./FilterItems";
+import FilterItems from "./FilterItems.js";
 import { useState } from "react";
 
 export default function FilterSection({ sectionName, options }) {

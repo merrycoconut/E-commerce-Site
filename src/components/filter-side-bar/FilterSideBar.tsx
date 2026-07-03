@@ -1,6 +1,6 @@
 import "./FilterSideBar.css";
-import FilterSection from "./FilterSection.jsx";
-import { productFilters } from "../../utils/productFilterData.jsx";
+import FilterSection from "./FilterSection.js";
+import { productFilters } from "../../utils/productFilterData.js";
 
 export default function FilterSideBar({ applyFilter, clearFilter }) {
   return (
