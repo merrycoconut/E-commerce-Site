@@ -1,11 +1,21 @@
 import "./ProductCard.css";
 
+interface ProductCardProps {
+  imgUrl: string;
+  colors: [];
+  productName: string;
+  priceRange: {
+    highest: number;
+    lowest: number;
+  };
+}
+
 export default function ProductCard({
   imgUrl,
   colors,
   productName,
   priceRange,
-}) {
+}: ProductCardProps) {
   const onSale = priceRange.highest > priceRange.lowest;
 
   return (

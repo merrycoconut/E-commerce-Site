@@ -2,7 +2,15 @@ import "./FilterSideBar.css";
 import FilterSection from "./FilterSection.js";
 import { productFilters } from "../../utils/productFilterData.js";
 
-export default function FilterSideBar({ applyFilter, clearFilter }) {
+interface FilterSideBarProps {
+  applyFilter: (formData: FormData) => void;
+  clearFilter: () => void;
+}
+
+export default function FilterSideBar({
+  applyFilter,
+  clearFilter,
+}: FilterSideBarProps) {
   return (
     <form action={(formData) => applyFilter(formData)}>
       {productFilters.map((filter) => (

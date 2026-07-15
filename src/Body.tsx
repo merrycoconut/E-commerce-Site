@@ -4,10 +4,13 @@ import FilterSideBar from "./components/filter-side-bar/FilterSideBar.js";
 import { useState } from "react";
 
 export default function Body() {
-  const [filters, setFilters] = useState([]);
+  type FiltersType = [string, FormDataEntryValue][] | [];
+  const [filters, setFilters] = useState<FiltersType>([]);
 
-  function applyFilter(formData) {
-    const selectedOptions = Array.from(formData.entries());
+  function applyFilter(formData: FormData) {
+    const selectedOptions = Array.from(formData.entries()) as Array<
+      [string, string]
+    >;
     setFilters(selectedOptions);
   }
 
@@ -17,7 +20,10 @@ export default function Body() {
         applyFilter={applyFilter}
         clearFilter={() => setFilters([])}
       />
-      <ProductList filters={filters} clearFilter={() => setFilters([])} />
+      <ProductList
+        filters={filters as Array<[string, string]>}
+        clearFilter={() => setFilters([])}
+      />
     </div>
   );
 }

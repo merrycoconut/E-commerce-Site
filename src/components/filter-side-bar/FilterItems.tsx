@@ -1,6 +1,18 @@
 import "./FilterItems.css";
 
-export default function FilterItems({ sectionName, options, isColor }) {
+interface FilterItemsProps {
+  sectionName: string;
+  options:
+    | { label: string; value: string }[]
+    | { label: string; value: number }[];
+  isColor: boolean;
+}
+
+export default function FilterItems({
+  sectionName,
+  options,
+  isColor,
+}: FilterItemsProps) {
   const labelClass = isColor ? "color-option" : "filter-option";
   const inputType = isColor ? "radio" : "checkbox";
 
@@ -21,6 +33,14 @@ export default function FilterItems({ sectionName, options, isColor }) {
   });
 }
 
+interface FilterItemProps {
+  labelClass: string;
+  inputType: string;
+  sectionName: string;
+  inputValue: string | number;
+  inputStyle: { backgroundColor: string | number } | undefined;
+  label: string | false;
+}
 function FilterItem({
   labelClass,
   inputType,
@@ -28,14 +48,14 @@ function FilterItem({
   inputValue,
   inputStyle,
   label,
-}) {
+}: FilterItemProps) {
   return (
     <label className={labelClass}>
       <input
         type={inputType}
         name={sectionName}
         value={inputValue}
-        style={inputStyle}
+        style={inputStyle as React.CSSProperties | undefined}
       />
       {label}
     </label>
