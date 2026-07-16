@@ -1,5 +1,5 @@
 import "./FilterSection.css";
-import FilterItems from "./FilterItems.js";
+import FilterItems from "./FilterItems";
 import { useState } from "react";
 
 interface FilterSectionProps {

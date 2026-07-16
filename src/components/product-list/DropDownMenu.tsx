@@ -9,13 +9,7 @@ export default function DropDownMenu({
 }: OnDropDownChangeProps) {
   return (
     <div className="drop-down-container">
-      <select
-        id="sortBy"
-        onChange={(e) => {
-          onDropDownChange(e.target.value);
-          console.log(e.target.value);
-        }}
-      >
+      <select id="sortBy" onChange={(e) => onDropDownChange(e.target.value)}>
         <option value=""> Sort by </option>
         <option value="popularity">Most popular</option>
         <option value="rating">Best rating</option>

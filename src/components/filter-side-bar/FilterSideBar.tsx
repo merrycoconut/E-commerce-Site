@@ -1,6 +1,6 @@
 import "./FilterSideBar.css";
-import FilterSection from "./FilterSection.js";
-import { productFilters } from "../../utils/productFilterData.js";
+import FilterSection from "./FilterSection";
+import { productFilters } from "../../utils/productFilterData";
 
 interface FilterSideBarProps {
   applyFilter: (formData: FormData) => void;
