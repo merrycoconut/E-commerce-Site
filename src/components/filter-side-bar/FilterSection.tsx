@@ -1,12 +1,11 @@
 import "./FilterSection.css";
 import FilterItems from "./FilterItems";
 import { useState } from "react";
+import type { Options } from "../../utils/types";
 
 interface FilterSectionProps {
   sectionName: string;
-  options:
-    | { label: string; value: string }[]
-    | { label: string; value: number }[];
+  options: Options;
 }
 
 export default function FilterSection({

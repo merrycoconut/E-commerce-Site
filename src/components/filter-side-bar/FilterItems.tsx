@@ -1,11 +1,18 @@
 import "./FilterItems.css";
+import type { Options } from "../../utils/types";
 
 interface FilterItemsProps {
   sectionName: string;
-  options:
-    | { label: string; value: string }[]
-    | { label: string; value: number }[];
+  options: Options;
   isColor: boolean;
+}
+interface FilterItemProps {
+  labelClass: string;
+  inputType: string;
+  sectionName: string;
+  inputValue: string | number;
+  inputStyle?: { backgroundColor: string | number };
+  label: string | false;
 }
 
 export default function FilterItems({
@@ -33,14 +40,6 @@ export default function FilterItems({
   });
 }
 
-interface FilterItemProps {
-  labelClass: string;
-  inputType: string;
-  sectionName: string;
-  inputValue: string | number;
-  inputStyle: { backgroundColor: string | number } | undefined;
-  label: string | false;
-}
 function FilterItem({
   labelClass,
   inputType,

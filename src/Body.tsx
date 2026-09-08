@@ -1,10 +1,11 @@
 import "./Body.css";
-import ProductList from "./components/product-list/ProductList.tsx";
-import FilterSideBar from "./components/filter-side-bar/FilterSideBar.js";
+import ProductList from "./components/product-list/ProductList";
+import FilterSideBar from "./components/filter-side-bar/FilterSideBar";
 import { useState } from "react";
 
+type FiltersType = [string, FormDataEntryValue][] | [];
+
 export default function Body() {
-  type FiltersType = [string, FormDataEntryValue][] | [];
   const [filters, setFilters] = useState<FiltersType>([]);
 
   function applyFilter(formData: FormData) {

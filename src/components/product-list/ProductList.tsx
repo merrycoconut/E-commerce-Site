@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { getApiUrl } from "../../utils/getApiUrl";
 
 interface ProductListProps {
-  filters: Array<[string, string]> | [];
+  filters: Array<[string, string]>;
   clearFilter: () => void;
 }
 
