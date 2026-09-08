@@ -1,7 +1,11 @@
 import "./EmptyProduct.css";
 import { RiTShirt2Line } from "@remixicon/react";
 
-export default function EmptyProduct({ clearFilter }) {
+interface EmptyProductProps {
+  clearFilter: () => void;
+}
+
+export default function EmptyProduct({ clearFilter }: EmptyProductProps) {
   return (
     <div className="empty-product">
       <RiTShirt2Line className="empty-product-icon" />

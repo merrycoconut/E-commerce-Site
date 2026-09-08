@@ -1,8 +1,17 @@
 import "./FilterSection.css";
 import FilterItems from "./FilterItems";
 import { useState } from "react";
+import type { Options } from "../../utils/types";
 
-export default function FilterSection({ sectionName, options }) {
+interface FilterSectionProps {
+  sectionName: string;
+  options: Options;
+}
+
+export default function FilterSection({
+  sectionName,
+  options,
+}: FilterSectionProps) {
   const [isMinus, setIsMinus] = useState(false);
   const isColor = sectionName === "Color" ? true : false;
 

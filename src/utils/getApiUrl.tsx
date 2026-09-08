@@ -1,5 +1,7 @@
-export function getApiUrl(filters, sortPars) {
-  let productUrl = new URL(
+type FiltersType = Array<[string, string]> | [];
+
+export function getApiUrl(filters: FiltersType, sortPars: string | undefined) {
+  const productUrl = new URL(
     "https://www.greatfrontend.com/api/projects/challenges/e-commerce/products",
   );
 

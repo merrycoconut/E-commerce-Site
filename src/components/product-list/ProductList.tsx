@@ -4,16 +4,37 @@ import EmptyProduct from "./EmptyProduct";
 import { useState, useEffect } from "react";
 import { getApiUrl } from "../../utils/getApiUrl";
 
-export default function ProductList({ filters, clearFilter }) {
-  const [sortPars, setSortPars] = useState();
-  const [productData, setProductData] = useState();
+interface ProductListProps {
+  filters: Array<[string, string]>;
+  clearFilter: () => void;
+}
+
+export default function ProductList({
+  filters,
+  clearFilter,
+}: ProductListProps) {
+  type Product = {
+    product_id: string;
+    images: { image_url: string }[];
+    colors: [];
+    name: string;
+    priceRange: {
+      highest: number;
+      lowest: number;
+    };
+  };
+
+  type ProductData = Product[];
+
+  const [sortPars, setSortPars] = useState<string | undefined>();
+  const [productData, setProductData] = useState<ProductData>();
   const [fetchStatus, setFetchStatus] = useState();
 
   let productCards;
   // Sucess fetch data from API
   if (!fetchStatus) {
-    productCards =
-      productData && productData.length ? (
+    if (productData) {
+      productCards = productData.length ? (
         productData.map((r) => {
           return (
             <ProductCard
@@ -29,15 +50,18 @@ export default function ProductList({ filters, clearFilter }) {
         // If nothing found show empty state
         <EmptyProduct clearFilter={clearFilter} />
       );
+    }
   }
 
   // Fetch product data from API
   useEffect(() => {
     async function pullJson() {
-      let response = await fetch(getApiUrl(filters, sortPars));
+      const response = await fetch(getApiUrl(filters, sortPars));
 
       if (response.ok) {
-        let result = await response.json();
+        const result = await response.json();
+        console.log(Array.from(result.data));
+
         return Array.from(result.data);
       } else {
         throw new Error(`HTTP status: ${response.status}`);
@@ -45,8 +69,9 @@ export default function ProductList({ filters, clearFilter }) {
     }
 
     pullJson().then(
-      (productCards) => {
-        setProductData(productCards);
+      (response) => {
+        const data = response as Product[];
+        setProductData(data);
       },
       (error) => {
         setFetchStatus(error.message);
@@ -57,7 +82,7 @@ export default function ProductList({ filters, clearFilter }) {
   return (
     <div>
       <DropDownMenu
-        onDropDownChange={(userSelection) => setSortPars(userSelection)}
+        onDropDownChange={(userSelection: string) => setSortPars(userSelection)}
       />
       <div className="product-list">
         {!fetchStatus ? (

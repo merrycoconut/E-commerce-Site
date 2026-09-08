@@ -1,6 +1,25 @@
 import "./FilterItems.css";
+import type { Options } from "../../utils/types";
 
-export default function FilterItems({ sectionName, options, isColor }) {
+interface FilterItemsProps {
+  sectionName: string;
+  options: Options;
+  isColor: boolean;
+}
+interface FilterItemProps {
+  labelClass: string;
+  inputType: string;
+  sectionName: string;
+  inputValue: string | number;
+  inputStyle?: { backgroundColor: string | number };
+  label: string | false;
+}
+
+export default function FilterItems({
+  sectionName,
+  options,
+  isColor,
+}: FilterItemsProps) {
   const labelClass = isColor ? "color-option" : "filter-option";
   const inputType = isColor ? "radio" : "checkbox";
 
@@ -28,14 +47,14 @@ function FilterItem({
   inputValue,
   inputStyle,
   label,
-}) {
+}: FilterItemProps) {
   return (
     <label className={labelClass}>
       <input
         type={inputType}
         name={sectionName}
         value={inputValue}
-        style={inputStyle}
+        style={inputStyle as React.CSSProperties | undefined}
       />
       {label}
     </label>
